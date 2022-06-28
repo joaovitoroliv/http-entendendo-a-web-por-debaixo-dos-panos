@@ -1,13 +1,13 @@
-## Table of contents
+## Sumário
 
-- [O que é o HTTP?](#o-que-é-o-http-?)
-- [A Web Segura - HTTPS](#a-web-segura-https)
-- [Endereços sob seu domínio](#endereços-sob-seu-dominio)
+- [O que é o HTTP?](#o-que-é-o-http)
+- [A Web Segura - HTTPS](#a-web-segura---https)
+- [Endereços sob seu domínio](#endereços-sob-seu-domínio)
 - [O cliente pede o servidor responde](#o-cliente-pede-o-servidor-responde)
-- [Depurando a requisição HTTP](#depurando-a-requisicao-http)
-- [Parâmetros da requisição](#parametros-da-requisicao)
-- [Serviços na Web com REST](#servicos-na-web-com-rest)
-- [HTTP2 - Por uma Web mais eficiente](#http2)
+- [Depurando a requisição HTTP](#depurando-a-requisição-http)
+- [Parâmetros da requisição](#parâmetros-da-requisição)
+- [Serviços na Web com REST](#serviços-na-web-com-rest)
+- [HTTP2 - Por uma Web mais eficiente](#http2---por-uma-web-mais-eficiente---dados-binários-gzip-ativo-e-tls)
 
 ## O que é o HTTP?
 - Protocolo HTTP são Regras de Comunicação entre Cliente e Servidor
@@ -96,4 +96,15 @@
       - application -> application/xml,  application/pdf
       - *Entre outros formatos...*
 ## HTTP2 - Por uma Web mais eficiente - Dados binários, GZIP ativo e TLS:
-- 
+- Requisição fora do browser - *curl*
+- Conteúdo do Header sofreu algumas alterações
+  - Corpo da resposta foi comprimido com GZIP
+    - Porque? Intenção de diminuir a quantidade de dados enviados, diminuir o tráfego para suprir o uso de smartwatches por exemplo
+- Cabeçalho não envia mais texto puro, envia binário
+- HPACK: tem como função comprimir ainda mais o os headers, para tornar a requisição algo leve e aumentar a performance
+- HTTP2 já traz uma camada de TLS - criptografia com TLS
+- Headers/Cabeçalhos Stateful: não preciso mais repetir os headers que eu ja enviei em uma requisição passada caso seja os mesmos
+- Server Push: 
+
+<img src="1.PNG" alt="exemplo imagem" width="200">
+<img src="2.PNG" alt="exemplo imagem" width="200">
