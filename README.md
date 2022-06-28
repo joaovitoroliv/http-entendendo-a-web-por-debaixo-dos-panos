@@ -106,5 +106,5 @@
 - Headers/Cabeçalhos Stateful: não preciso mais repetir os headers que eu ja enviei em uma requisição passada caso seja os mesmos
 - Server Push: 
 
-<img src="1.PNG" alt="exemplo imagem" width="200">
-<img src="2.PNG" alt="exemplo imagem" width="200">
+<img src="1.PNG" alt="exemplo imagem">
+<img src="2.PNG" alt="exemplo imagem">
