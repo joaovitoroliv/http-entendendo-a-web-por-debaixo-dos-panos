@@ -105,6 +105,15 @@
 - HTTP2 já traz uma camada de TLS - criptografia com TLS
 - Headers/Cabeçalhos Stateful: não preciso mais repetir os headers que eu ja enviei em uma requisição passada caso seja os mesmos
 - Server Push: 
-
-<img src="1.PNG" alt="exemplo imagem">
-<img src="2.PNG" alt="exemplo imagem">
+  - HTTP1: Cada recurso novo é uma requisição nova que o cliente tem que fazer
+  - HTTP2: Requisição de index.html já recebe todos os recursos, se antecipando e sem ter que fazer outra requisição
+- Multiplexação:
+  - Para realizar uma requisição é necessário que uma conexão TCP esteja ativa. No HTTP1 é possível que essa conexão fique aberta para que seja possível realizar requisições sem que haja necessidade de abrir uma nova conexão.
+  - De 4 a 8 conexões simultâneas são permitidas no HTTP1. No HTTP2 é possível que sejam feitas requisições assíncronas, ou seja, é possível que eu faça outra requisição sem que a resposta da primeira tenha retornado, aumentando assim a performance. (Multiplexing)
+- Em resumo: 
+  - HTTP2 sofreu algumas melhorias, principalmente em performance
+    - Header em binários e comprimidos(HPACK)
+    - GZIP padrão na resposta
+    - Multiplexing (Requisição e respostas são paralelas/assincronas)
+    - Headers Stateful (Mandamos apenas os cabeçalhos que mudam)
+    - Server-Push: ato do servidor antecipar dados que serão requisitados pelo browser em seguida.
